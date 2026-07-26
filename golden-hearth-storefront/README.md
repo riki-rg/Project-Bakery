@@ -107,8 +107,8 @@
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/golden-hearth-storefront.git
-cd golden-hearth-storefront
+git clone https://github.com/riki-rg/Project-Bakery.git
+cd Project-Bakery
 ```
 
 ### 2. Install Dependencies

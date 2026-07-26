@@ -128,8 +128,8 @@
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/bakery-system.git
-cd bakery-system
+git clone https://github.com/riki-rg/Project-Bakery.git
+cd Project-Bakery
 ```
 
 ### 2. Install PHP Dependencies
