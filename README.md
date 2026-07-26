@@ -103,8 +103,8 @@ bakerrr/
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/riki-rg/bakerrr.git
-cd bakerrr
+git clone https://github.com/riki-rg/Project-Bakery.git
+cd Project-Bakery
 ```
 
 ### 2. Backend Setup
