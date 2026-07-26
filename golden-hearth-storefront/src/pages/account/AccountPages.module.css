@@ -1,0 +1,108 @@
+.section { padding: var(--spacing-xl); }
+.sectionTitle { font-size: var(--typo-title-lg); margin-bottom: var(--spacing-xl); }
+
+.form { display: flex; flex-direction: column; gap: var(--spacing-md); max-width: 480px; }
+.formActions { display: flex; gap: var(--spacing-md); margin-top: var(--spacing-sm); }
+
+/* Empty */
+.empty { display: flex; flex-direction: column; align-items: center; gap: var(--spacing-md); padding: var(--spacing-3xl); text-align: center; }
+.emptyIcon { color: var(--color-text-subtle); }
+.empty p { color: var(--color-text-muted); }
+
+/* Orders */
+.orderList { display: flex; flex-direction: column; gap: var(--spacing-md); }
+.orderCard { background: var(--color-canvas); border: 1px solid var(--color-border); border-radius: var(--rounded-md); padding: var(--spacing-lg); }
+.orderHeader { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: var(--spacing-md); gap: var(--spacing-md); }
+.orderId { font-weight: 700; font-size: var(--typo-body-sm); color: var(--color-text-main); }
+.orderDate { font-size: var(--typo-label); color: var(--color-text-subtle); margin-top: 2px; }
+.statusBadge {
+  font-size: var(--typo-label);
+  font-weight: 600;
+  padding: 4px var(--spacing-sm);
+  border-radius: var(--rounded-full);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.statusSuccess { background: var(--color-success-soft); color: var(--color-success); }
+.statusInfo { background: var(--color-info-soft); color: var(--color-info); }
+.statusDanger { background: var(--color-danger-soft); color: var(--color-danger); }
+.statusWarning { background: var(--color-warning-soft); color: var(--color-warning); }
+.orderFooter { display: flex; align-items: center; justify-content: space-between; }
+.orderTotal { font-weight: 700; font-size: var(--typo-body-md); }
+.orderLink { font-size: var(--typo-body-sm); color: var(--color-primary); text-decoration: none; font-weight: 500; }
+
+/* Wishlist */
+.wishlistGrid { display: flex; flex-direction: column; gap: 0; }
+.wishlistItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.wishlistItem:last-child { border-bottom: none; }
+.wishlistImage {
+  width: 64px;
+  height: 64px;
+  background: var(--color-canvas-alt);
+  border-radius: var(--rounded-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+.wishlistInfo { flex: 1; min-width: 0; }
+.wishlistName { font-weight: 600; font-size: var(--typo-body-sm); color: var(--color-text-main); text-decoration: none; display: block; margin-bottom: 4px; }
+.wishlistName:hover { color: var(--color-primary); }
+.wishlistPrice { font-size: var(--typo-body-sm); color: var(--color-text-muted); }
+.wishlistActions { display: flex; gap: var(--spacing-xs); }
+.removeWish { background: transparent; border: none; cursor: pointer; color: var(--color-text-subtle); padding: var(--spacing-xs); border-radius: var(--rounded-sm); transition: all var(--duration-fast) var(--ease-snappy); display: flex; }
+.removeWish:hover { color: var(--color-danger); background: var(--color-danger-soft); }
+
+/* Notifications */
+.notifList { display: flex; flex-direction: column; gap: 0; }
+.notifItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.notifItem:last-child { border-bottom: none; }
+.notifUnread { background: var(--color-primary-soft); margin: 0 calc(-1 * var(--spacing-xl)); padding: var(--spacing-md) var(--spacing-xl); }
+.notifDot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--rounded-full);
+  background: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 6px;
+  opacity: 0;
+}
+.notifUnread .notifDot { opacity: 1; }
+.notifTitle { font-weight: 600; font-size: var(--typo-body-sm); margin-bottom: 4px; }
+.notifBody { font-size: var(--typo-body-sm); color: var(--color-text-muted); margin-bottom: 4px; }
+.notifTime { font-size: var(--typo-label); color: var(--color-text-subtle); }
+
+/* Addresses */
+.addressForm {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-border);
+  border-radius: var(--rounded-md);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+}
+
+.addressCard {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-border);
+  border-radius: var(--rounded-md);
+  padding: var(--spacing-lg);
+  transition: all var(--duration-fast) var(--ease-snappy);
+}
+
+.addressCard:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-card);
+}

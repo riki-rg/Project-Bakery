@@ -1,0 +1,90 @@
+.page { background: var(--color-canvas); }
+.hero { background: var(--color-canvas-alt); padding: clamp(3rem, 8vw, 7rem) 0; }
+.heroInner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--spacing-3xl); align-items: center; }
+.eyebrow { color: var(--color-primary); font-size: var(--typo-label); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--spacing-sm); }
+.lead { color: var(--color-text-muted); font-size: var(--typo-body-lg); max-width: 620px; margin-top: var(--spacing-lg); }
+.actions { display: flex; gap: var(--spacing-md); margin-top: var(--spacing-xl); flex-wrap: wrap; }
+.heroCard { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--rounded-xl); padding: var(--spacing-3xl); box-shadow: var(--shadow-elevated); text-align: center; }
+.heroEmoji { font-size: 6rem; display: block; margin-bottom: var(--spacing-lg); }
+.heroCard p, .muted { color: var(--color-text-muted); }
+.storyGrid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: var(--spacing-3xl); align-items: start; }
+.storyText { display: grid; gap: var(--spacing-lg); color: var(--color-text-muted); font-size: var(--typo-body-lg); }
+.altSection { background: var(--color-canvas-alt); padding: var(--section-padding) 0; }
+.sectionHeader { text-align: center; margin-bottom: var(--spacing-3xl); }
+.processGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-lg); }
+.processCard, .valueCard { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--rounded-lg); padding: var(--spacing-xl); box-shadow: var(--shadow-card); }
+.processCard span { font-size: 2.4rem; display: block; margin-bottom: var(--spacing-md); }
+.processCard h3, .valueCard h3 { font-family: Inter, sans-serif; font-size: var(--typo-title-sm); margin-bottom: var(--spacing-sm); }
+.processCard p, .valueCard p { color: var(--color-text-muted); font-size: var(--typo-body-sm); }
+.valuesGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-lg); }
+.valueCard svg { color: var(--color-primary); margin-bottom: var(--spacing-md); }
+.ingredientsSection { 
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #2A1810 100%);
+  padding: var(--section-padding) 0;
+  position: relative;
+}
+
+/* Add subtle pattern overlay */
+.ingredientsSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(185, 83, 36, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(217, 148, 36, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ingredientsInner { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: var(--spacing-3xl); 
+  color: var(--color-text-inverse);
+  position: relative;
+  z-index: 1;
+}
+
+.ingredientsInner h2 { 
+  color: #FFFCF7 !important; /* Whipped Cream - Force white text on dark background */
+}
+
+.ingredientsInner .eyebrow {
+  color: var(--color-accent) !important;
+}
+
+.ingredientsInner .muted {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.ingredientsList { 
+  list-style: none; 
+  display: grid; 
+  gap: var(--spacing-md); 
+}
+
+.ingredientsList li { 
+  background: rgba(255, 255, 255, 0.08); 
+  border: 1px solid rgba(255, 255, 255, 0.12); 
+  border-radius: var(--rounded-md); 
+  padding: var(--spacing-md); 
+  color: rgba(255, 255, 255, 0.92);
+  transition: all var(--duration-fast) var(--ease-snappy);
+}
+
+.ingredientsList li:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-primary);
+  transform: translateX(4px);
+}
+
+/* Dark theme adjustment */
+[data-theme="dark"] .ingredientsSection {
+  background: linear-gradient(135deg, #1A110C 0%, #0D0705 100%);
+}
+
+[data-theme="dark"] .ingredientsList li {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+@media (max-width: 900px) { .heroInner, .storyGrid, .ingredientsInner { grid-template-columns: 1fr; } .processGrid, .valuesGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .processGrid, .valuesGrid { grid-template-columns: 1fr; } }

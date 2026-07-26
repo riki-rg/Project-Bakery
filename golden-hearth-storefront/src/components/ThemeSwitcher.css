@@ -1,0 +1,114 @@
+/* ============================================================
+   ThemeSwitcher Component Styles - R Bread's
+   ============================================================ */
+
+.theme-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--rounded-full);
+  box-shadow: var(--shadow-card);
+}
+
+.theme-option {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: transparent;
+  border: 1.5px solid transparent;
+  border-radius: var(--rounded-full);
+  color: var(--color-text-muted);
+  font-size: var(--typo-body-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: 
+    background-color var(--duration-fast) var(--ease-snappy),
+    border-color var(--duration-fast) var(--ease-snappy),
+    color var(--duration-fast) var(--ease-snappy),
+    transform var(--duration-fast) var(--ease-snappy);
+  white-space: nowrap;
+}
+
+.theme-option:hover {
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.theme-option:active {
+  transform: translateY(0);
+}
+
+.theme-option.active {
+  background-color: var(--color-primary-soft);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.theme-option:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.theme-icon {
+  flex-shrink: 0;
+  transition: transform var(--duration-fast) var(--ease-snappy);
+}
+
+.theme-option:hover .theme-icon {
+  transform: scale(1.1);
+}
+
+.theme-option.active .theme-icon {
+  transform: scale(1.05);
+}
+
+.theme-label {
+  user-select: none;
+}
+
+/* ── Responsive: Mobile ───────────────────────────────────── */
+@media (max-width: 640px) {
+  .theme-switcher {
+    gap: 0;
+  }
+
+  .theme-option {
+    padding: var(--spacing-xs);
+    min-width: 44px; /* Touch target */
+    justify-content: center;
+  }
+
+  .theme-label {
+    display: none; /* Hide labels on mobile, show icons only */
+  }
+}
+
+/* ── Compact Variant (for navbar) ─────────────────────────── */
+.theme-switcher.compact {
+  padding: 4px;
+  gap: 2px;
+}
+
+.theme-switcher.compact .theme-option {
+  padding: 6px 10px;
+  font-size: 0.8125rem;
+}
+
+/* ── Reduced Motion ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .theme-option,
+  .theme-icon {
+    transition: none;
+  }
+
+  .theme-option:hover,
+  .theme-option.active {
+    transform: none;
+  }
+}

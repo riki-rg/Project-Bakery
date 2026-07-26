@@ -1,0 +1,180 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║                   🍞 R BREAD'S - NEXT STEPS GUIDE                        ║
+║                        Quick Action Checklist                            ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+📅 Generated: 2026-07-25
+✅ Session Completed: Color Unification + Theme Switcher + Recommendations
+
+────────────────────────────────────────────────────────────────────────────
+🚀 IMMEDIATE ACTIONS (Do This Now - 30 min total)
+────────────────────────────────────────────────────────────────────────────
+
+1. TEST THEME SWITCHER (5 min)
+   ▸ cd /home/rizz/Documents/bakerrr/golden-hearth-storefront
+   ▸ npm run dev
+   ▸ Open browser: http://localhost:5173
+   ▸ Test Light/Dark/System theme switching
+   ▸ Verify: localStorage key = 'rb-theme-storage'
+   ▸ Check: No console errors
+   ▸ Mobile test: Theme icons visible, labels hidden
+
+2. BUILD & VERIFY COLORS (10 min)
+   Backend:
+   ▸ cd /home/rizz/Documents/bakerrr/bakery-system
+   ▸ npm run build
+   ▸ php artisan serve
+   ▸ Check: Primary color = #B95324 (caramel)
+   
+   Frontend:
+   ▸ cd /home/rizz/Documents/bakerrr/golden-hearth-storefront
+   ▸ npm run build
+   ▸ Check build output: No errors
+   ▸ Visual check: Dark theme works properly
+
+3. INTEGRATE THEME SWITCHER TO NAVBAR (15 min)
+   ▸ Open: src/components/layout/Navbar.jsx
+   ▸ Current: Manual theme dropdown exists (lines 97-128)
+   ▸ Option A: Keep existing (already using useThemeStore)
+   ▸ Option B: Replace with ThemeSwitcherZustand component
+   ▸ Recommendation: Keep existing, just verify it works
+
+────────────────────────────────────────────────────────────────────────────
+🎯 HIGH PRIORITY (This Week)
+────────────────────────────────────────────────────────────────────────────
+
+4. SANCTUM AUTH SETUP (2-4 hours)
+   Backend verification:
+   ▸ cd /home/rizz/Documents/bakerrr/bakery-system
+   ▸ php artisan route:list | grep sanctum
+   ▸ Check: config/sanctum.php → 'stateful' domains
+   ▸ Check: config/cors.php → supports_credentials = true
+   ▸ Test: POST /login with valid credentials
+   
+   Frontend integration:
+   ▸ Create: src/services/api.js (axios + CSRF)
+   ▸ Update: authStore.js to use new api service
+   ▸ Test: Login → Check cookies → Authenticated request
+   
+   📖 Full guide: TECHNICAL_RECOMMENDATIONS.md (Section 2)
+
+5. MULTI-BRANCH DATABASE (3-5 hours)
+   Create migrations:
+   ▸ php artisan make:migration add_multi_branch_support
+   ▸ Copy SQL from: TECHNICAL_RECOMMENDATIONS.md (Section 3, Phase 1)
+   ▸ php artisan make:model Branch
+   ▸ php artisan make:seeder BranchSeeder
+   
+   Run migration:
+   ▸ php artisan migrate
+   ▸ php artisan db:seed --class=BranchSeeder
+   
+   Create API:
+   ▸ php artisan make:controller Api/BranchController
+   ▸ Add routes: routes/api.php
+   
+   📖 Full guide: TECHNICAL_RECOMMENDATIONS.md (Section 3)
+
+6. WCAG CONTRAST CHECK (20 min)
+   ▸ Open: https://webaim.org/resources/contrastchecker/
+   ▸ Check all pairs in: COLOR_PALETTE_ANALYSIS.md (Section 10)
+   ▸ Target: AA compliance (4.5:1 text, 3:1 UI)
+   ▸ Update failing combinations if any
+
+────────────────────────────────────────────────────────────────────────────
+📚 MEDIUM PRIORITY (Next Week)
+────────────────────────────────────────────────────────────────────────────
+
+7. PRERENDER/SSG FOR SEO (6-8 hours)
+   Choose option:
+   ▸ Option A (Recommended): vike (vite-plugin-ssr)
+     - npm install vike
+     - Restructure to pages/ directory
+     - Add +Page.jsx for each route
+   
+   ▸ Option B (Simpler): vite-plugin-ssg
+     - npm install vite-plugin-ssg
+     - Update vite.config.js
+     - Add ssg options
+   
+   📖 Full guide: TECHNICAL_RECOMMENDATIONS.md (Section 1)
+
+8. UPDATE REMAINING BRANDING
+   Search & replace:
+   ▸ grep -r "Golden Hearth" src/
+   ▸ grep -r "golden-hearth" src/
+   ▸ Update meta tags, titles, OG tags
+   ▸ Update logo files (if any)
+   ▸ Update package.json name field
+
+9. DOCUMENTATION UPDATE
+   Files to update:
+   ▸ PRD_manajemen_toko_roti.md → Replace brand references
+   ▸ PRD_react_storefront_toko_roti.md → Replace brand references
+   ▸ DESIGN_SYSTEM_toko_roti.md → Update color values
+   ▸ DESIGN_GOLDEN_HEARTH_BAKERY.md → Rename & update
+   ▸ README files → Update project name
+
+────────────────────────────────────────────────────────────────────────────
+📖 REFERENCE DOCUMENTS
+────────────────────────────────────────────────────────────────────────────
+
+All documentation in: /home/rizz/Documents/bakerrr/
+
+✓ COLOR_PALETTE_ANALYSIS.md       → Color decisions & comparison
+✓ TECHNICAL_RECOMMENDATIONS.md    → Sanctum, SSG, Multi-branch guides
+✓ IMPLEMENTATION_SUMMARY.md       → What was done today
+✓ NEXT_STEPS.txt                  → This file (quick reference)
+
+Original design docs:
+• PRD_manajemen_toko_roti.md      → Backend requirements
+• PRD_react_storefront_toko_roti.md → Frontend requirements  
+• DESIGN_SYSTEM_toko_roti.md      → Backend design system
+• DESIGN_GOLDEN_HEARTH_BAKERY.md  → Frontend design system
+
+────────────────────────────────────────────────────────────────────────────
+🆘 TROUBLESHOOTING
+────────────────────────────────────────────────────────────────────────────
+
+Theme not switching?
+▸ Check: localStorage → 'rb-theme-storage' exists
+▸ Check: document.documentElement.getAttribute('data-theme')
+▸ Clear localStorage and reload
+
+Colors look wrong?
+▸ Hard refresh: Ctrl+Shift+R (Chrome/Firefox)
+▸ Check: CSS variables in DevTools
+▸ Rebuild: npm run build
+
+Backend API not working?
+▸ Check: php artisan serve is running
+▸ Check: .env → APP_URL matches
+▸ Check: CORS config allows frontend origin
+▸ Laravel logs: storage/logs/laravel.log
+
+────────────────────────────────────────────────────────────────────────────
+✅ VALIDATION CHECKLIST
+────────────────────────────────────────────────────────────────────────────
+
+Before considering complete:
+[ ] Theme switcher works (Light/Dark/System)
+[ ] No theme flash on page load
+[ ] Colors consistent backend ↔ frontend
+[ ] Dark theme readable (good contrast)
+[ ] Mobile responsive (theme switcher)
+[ ] Sanctum auth working
+[ ] Multi-branch API returning data
+[ ] SEO prerender implemented
+[ ] WCAG AA compliant
+[ ] All "Golden Hearth" replaced with "R Bread's"
+[ ] Production build successful (no errors)
+[ ] Documentation updated
+
+────────────────────────────────────────────────────────────────────────────
+
+Need help? Check the comprehensive guides:
+• TECHNICAL_RECOMMENDATIONS.md (13.4KB) - Step-by-step implementations
+• COLOR_PALETTE_ANALYSIS.md (11.8KB) - Design decisions & rationale
+• IMPLEMENTATION_SUMMARY.md - What changed & why
+
+Good luck! 🍞✨

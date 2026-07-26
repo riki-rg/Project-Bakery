@@ -1,0 +1,24 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+.stars {
+  display: flex;
+  gap: 2px;
+}
+.starFilled {
+  color: var(--color-accent);
+}
+.starEmpty {
+  color: var(--color-border);
+}
+.number {
+  font-size: var(--typo-body-sm);
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+.count {
+  font-weight: 400;
+  color: var(--color-text-muted);
+}

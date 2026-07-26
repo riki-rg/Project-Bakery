@@ -1,0 +1,184 @@
+/* ============================================================
+   R BREAD'S — Design Tokens
+   Version: 2.0.0
+   Brand: R Bread's Artisan Bakery
+   Unified color system with backend management panel
+   ============================================================ */
+
+/* ── R Bread's Core Colors (Shared) ───────────────────────── */
+:root {
+  /* Brand Identity - R Bread's Core */
+  --rb-primary: #B95324;           /* R Bread's Caramel */
+  --rb-primary-hover: #98401C;     /* Burnt Caramel */
+  --rb-primary-active: #7C3217;    /* Deep Terracotta */
+  --rb-primary-soft: #F9E2D2;      /* Caramel Cream */
+  
+  --rb-accent: #D99424;            /* Honey Gold */
+  --rb-accent-soft: #FFF0C7;       /* Honey Glaze */
+  
+  --rb-brand-berry: #9F3F54;       /* Berry Signature */
+  --rb-brand-berry-soft: #F7E1E6;  /* Berry Mousse */
+  
+  /* Semantic Status Colors (Universal) */
+  --rb-success: #347552;
+  --rb-success-soft: #E2F2E8;
+  --rb-warning: #94620F;
+  --rb-warning-soft: #FFF0C9;
+  --rb-danger: #A33F3A;
+  --rb-danger-soft: #F9E2E0;
+  --rb-info: #3E7080;
+  --rb-info-soft: #E1F0F3;
+}
+
+/* ── Light Theme (Morning at R Bread's) ───────────────────── */
+:root,
+[data-theme="light"] {
+  /* Surface */
+  --color-canvas: #FFF9F0;
+  --color-canvas-alt: #F8EEDC;
+  --color-surface: #FFFEFC;
+  --color-surface-elevated: #FFF5E7;
+
+  /* Brand — Primary (use R Bread's core) */
+  --color-primary: var(--rb-primary);
+  --color-primary-hover: var(--rb-primary-hover);
+  --color-primary-active: var(--rb-primary-active);
+  --color-primary-soft: var(--rb-primary-soft);
+
+  /* Brand — Secondary (Cocoa Bean) */
+  --color-secondary: #432A20;
+  --color-secondary-soft: #EDE0D7;
+
+  /* Accent (use R Bread's core) */
+  --color-accent: var(--rb-accent);
+  --color-accent-soft: var(--rb-accent-soft);
+  --color-brand-accent: var(--rb-brand-berry);
+  --color-brand-accent-soft: var(--rb-brand-berry-soft);
+
+  /* Text */
+  --color-text-main: #33221B;      /* Dark Chocolate */
+  --color-text-muted: #716057;     /* Roasted Taupe */
+  --color-text-subtle: #907D73;    /* Soft Mocha */
+  --color-text-inverse: #FFFCF7;   /* Whipped Cream */
+
+  /* Border */
+  --color-border: #E8D9C9;         /* Biscuit Edge */
+  --color-border-strong: #CBB5A1;  /* Toast Crust */
+
+  /* Status (use R Bread's semantic) */
+  --color-success: var(--rb-success);
+  --color-success-soft: var(--rb-success-soft);
+  --color-warning: var(--rb-warning);
+  --color-warning-soft: var(--rb-warning-soft);
+  --color-danger: var(--rb-danger);
+  --color-danger-soft: var(--rb-danger-soft);
+  --color-info: var(--rb-info);
+  --color-info-soft: var(--rb-info-soft);
+
+  /* Elevation Shadows (Light) */
+  --shadow-card: 0 1px 3px rgba(51, 34, 27, 0.06);
+  --shadow-elevated: 0 4px 12px rgba(51, 34, 27, 0.08), 0 1px 3px rgba(51, 34, 27, 0.04);
+  --shadow-overlay: 0 8px 32px rgba(51, 34, 27, 0.12);
+  --backdrop-overlay: rgba(51, 34, 27, 0.4);
+}
+
+/* ── Dark Theme (After Hours at R Bread's) ────────────────── */
+[data-theme="dark"] {
+  /* Surface */
+  --color-canvas: #181310;
+  --color-canvas-alt: #211A16;
+  --color-surface: #2A211C;
+  --color-surface-elevated: #362A24;
+
+  /* Brand — Primary (Golden Caramel) */
+  --color-primary: #E39A58;
+  --color-primary-hover: #F0B173;
+  --color-primary-active: #C97A39;
+  --color-primary-soft: #4A2E20;
+
+  /* Brand — Secondary */
+  --color-secondary: #F8EBDD;
+  --color-secondary-soft: #40342E;
+
+  /* Accent */
+  --color-accent: #F0B94D;
+  --color-accent-soft: #44351C;
+  --color-brand-accent: #E4869A;
+  --color-brand-accent-soft: #47252E;
+
+  /* Text */
+  --color-text-main: #F8EDE2;
+  --color-text-muted: #D0BEB1;
+  --color-text-subtle: #AD998D;
+  --color-text-inverse: #26170F;
+
+  /* Border */
+  --color-border: #493A32;
+  --color-border-strong: #685247;
+
+  /* Status (Lightened for dark bg) */
+  --color-success: #71C493;        /* Mint Light */
+  --color-success-soft: #183629;   /* Forest Dark */
+  --color-warning: #E7B85A;        /* Honey Bright */
+  --color-warning-soft: #3C2D13;   /* Amber Dark */
+  --color-danger: #E88983;         /* Rose Light */
+  --color-danger-soft: #422220;    /* Brick Dark */
+  --color-info: #83C0D2;           /* Sky Light */
+  --color-info-soft: #19333A;      /* Slate Dark */
+
+  /* Elevation (Dark — minimal shadow, rely on surfaces) */
+  --shadow-card: none;
+  --shadow-elevated: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-overlay: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --backdrop-overlay: rgba(0, 0, 0, 0.6);
+}
+
+/* ── Spacing Scale ────────────────────────────────────────── */
+:root {
+  --spacing-2xs: 0.25rem;  /* 4px */
+  --spacing-xs:  0.5rem;   /* 8px */
+  --spacing-sm:  0.75rem;  /* 12px */
+  --spacing-md:  1rem;     /* 16px */
+  --spacing-lg:  1.5rem;   /* 24px */
+  --spacing-xl:  2rem;     /* 32px */
+  --spacing-2xl: 3rem;     /* 48px */
+  --spacing-3xl: 4rem;     /* 64px */
+  --spacing-4xl: 6rem;     /* 96px */
+
+  /* Border Radius */
+  --rounded-none: 0px;
+  --rounded-xs:   4px;
+  --rounded-sm:   8px;
+  --rounded-md:   12px;
+  --rounded-lg:   16px;
+  --rounded-xl:   24px;
+  --rounded-full: 9999px;
+
+  /* Typography — Fluid */
+  --typo-display-lg: clamp(2rem, 5vw + 1rem, 3.5rem);
+  --typo-display-md: clamp(1.5rem, 3vw + 0.75rem, 2.25rem);
+  --typo-display-sm: clamp(1.25rem, 2.5vw + 0.5rem, 1.75rem);
+  --typo-title-lg:   clamp(1.25rem, 1.5vw + 0.5rem, 1.5rem);
+  --typo-title-md:   clamp(1.125rem, 1.2vw + 0.5rem, 1.25rem);
+  --typo-title-sm:   1.125rem;
+  --typo-body-lg:    clamp(1rem, 0.5vw + 0.875rem, 1.125rem);
+  --typo-body-md:    1rem;
+  --typo-body-sm:    0.875rem;
+  --typo-button:     0.875rem;
+  --typo-label:      0.75rem;
+  --typo-price:      clamp(1.25rem, 1.5vw + 0.5rem, 1.5rem);
+  --typo-price-sm:   1rem;
+
+  /* Easing */
+  --ease-snappy: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast:   0.2s;
+  --duration-normal: 0.3s;
+  --duration-slow:   0.5s;
+
+  /* Layout */
+  --container-max: min(1200px, 90vw);
+  --section-padding: clamp(2rem, 6vw, 6rem);
+  --navbar-height: 64px;
+}

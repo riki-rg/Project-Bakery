@@ -1,0 +1,77 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+  font-size: var(--typo-label);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 2px var(--spacing-xs);
+  border-radius: var(--rounded-xs);
+  line-height: 1.4;
+}
+
+.badge-stock-available {
+  background: var(--color-success-soft);
+  color: var(--color-success);
+}
+.badge-stock-low {
+  background: var(--color-warning-soft);
+  color: var(--color-warning);
+}
+.badge-stock-out {
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+}
+.badge-promo {
+  background: var(--color-brand-accent);
+  color: var(--color-text-inverse);
+  border-radius: var(--rounded-xs);
+}
+.badge-info {
+  background: var(--color-info-soft);
+  color: var(--color-info);
+}
+.badge-success {
+  background: var(--color-success-soft);
+  color: var(--color-success);
+}
+.badge-warning {
+  background: var(--color-warning-soft);
+  color: var(--color-warning);
+}
+.badge-danger {
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+}
+.badge-accent {
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+/* Chip */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+  font-size: var(--typo-body-sm);
+  font-weight: 400;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--color-canvas);
+  border: 1px solid var(--color-border);
+  border-radius: var(--rounded-full);
+  cursor: pointer;
+  color: var(--color-text-main);
+  transition: all var(--duration-fast) var(--ease-snappy);
+}
+
+.chip:hover {
+  border-color: var(--color-border-strong);
+  background: var(--color-surface-elevated);
+}
+
+.chipActive {
+  background: var(--color-primary-soft);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 500;
+}

@@ -1,0 +1,22 @@
+.page { background: var(--color-canvas); }
+.hero { background: var(--color-canvas-alt); padding: clamp(3rem, 7vw, 6rem) 0; }
+.hero h1 { max-width: 820px; margin-bottom: var(--spacing-md); }
+.hero p { max-width: 700px; color: var(--color-text-muted); font-size: var(--typo-body-lg); }
+.eyebrow { color: var(--color-primary); font-size: var(--typo-label); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--spacing-sm); }
+.branchGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg); }
+.branchCard { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--rounded-xl); overflow: hidden; box-shadow: var(--shadow-card); }
+.mapPreview { height: 180px; background: linear-gradient(135deg, var(--color-primary-soft), var(--color-canvas-alt)); color: var(--color-primary); display: flex; align-items: center; justify-content: center; }
+.branchBody { padding: var(--spacing-xl); display: grid; gap: var(--spacing-md); }
+.branchBody h2 { font-size: var(--typo-title-lg); }
+.highlight { color: var(--color-text-muted); font-size: var(--typo-body-sm); }
+.infoList { display: grid; gap: var(--spacing-sm); }
+.infoList p { display: flex; gap: var(--spacing-sm); align-items: flex-start; color: var(--color-text-muted); font-size: var(--typo-body-sm); }
+.infoList svg { color: var(--color-primary); flex-shrink: 0; margin-top: 2px; }
+.actions { display: flex; gap: var(--spacing-sm); flex-wrap: wrap; }
+.faqSection { background: var(--color-canvas-alt); padding: var(--section-padding) 0; }
+.sectionHeader { text-align: center; margin-bottom: var(--spacing-2xl); }
+.faqGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg); }
+.faqCard { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--rounded-lg); padding: var(--spacing-xl); }
+.faqCard h3 { font-family: Inter, sans-serif; font-size: var(--typo-title-sm); margin-bottom: var(--spacing-sm); }
+.faqCard p { color: var(--color-text-muted); font-size: var(--typo-body-sm); }
+@media (max-width: 900px) { .branchGrid, .faqGrid { grid-template-columns: 1fr; } }
