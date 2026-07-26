@@ -129,7 +129,7 @@
 
 ```bash
 git clone https://github.com/riki-rg/Project-Bakery.git
-cd Project-Bakery
+cd Project-Bakery/bakery-system
 ```
 
 ### 2. Install PHP Dependencies
