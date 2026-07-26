@@ -103,7 +103,7 @@ bakerrr/
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/bakerrr.git
+git clone https://github.com/riki-rg/bakerrr.git
 cd bakerrr
 ```
 
